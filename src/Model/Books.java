@@ -28,13 +28,13 @@ public class Books implements Comparable<Books> {
 	private static long counter = 0;
 	final long id;
 	final String title;
-	final int releaseDate;
+	final String releaseDate;
 	final String name;
 
 	private int sumRatings;
 	private int sumReviewers;
 
-	public Books(String title, int releaseDate, String name) {
+	public Books(String title, String releaseDate, String name) {
 
 		Preconditions.checkNotNull(title);
 		Preconditions.checkNotNull(releaseDate);
@@ -74,7 +74,7 @@ public class Books implements Comparable<Books> {
 		return id;
 	}
 
-	public int getReleaseDate() {
+	public String getReleaseDate() {
 		return releaseDate;
 	}
 
