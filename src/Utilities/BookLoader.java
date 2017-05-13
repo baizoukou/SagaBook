@@ -1,162 +1,192 @@
+/**
+ * @author Alexandre
+ */
 package Utilities;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.Map;
 
-import Model.Users;
 import Model.Books;
 import Model.Rating;
 import Model.Users;
 
-@SuppressWarnings("unused")
-public class BookLoader {
-	/*
-	 * * @author alexandre Baizoukou WIT Bsc Applied Computing
-	 * 
-	 * @version 1.0
-	 * 
-	 * @author Eamon Delastar WIT Lecturer
-	 * 
-	 * @author Franck Walsh WIT Lecturer
-	 * 
-	 * @author Martin Harrigan Assistant Lecturer WIT
-	 * 
-	 * @author Cormen, Leiserson, Rivest, Stein, Introduction to Algorithms, MIT
-	 * Press
-	 * 
-	 * @author Fotakis. Course of Algorithms and Complexity at the National
-	 * Technical University of Athens.
-	 * 
-	 * @author Tim Roughgarden Coursera
-	 * 
-	 * 
-	 * This class implement a simple loading of text file that will be later on
-	 * serialize importMovie is a Hashmap same as importUser meaning while
-	 * importRating is an array of ratings this will help mapping class Movie to
-	 * class User importMovie token is based on long, String,int and String
-	 * importUser token is based on long, String,String, int, String, String
-	 * importRating is based on long, int, int
-	 * 
-	 * @param importMovie<Hashmap>
-	 * 
-	 * @param importUser<Hashmap>
-	 * 
-	 * @param importRating<Arrays>
-	 * 
-	 */
+/**
+ * The parser class ensures the reading in of raw data from specified file paths
+ * and the packaging of that data into specific Object types which are then grouped 
+ * into specific data structures such as a HashMap or an ArrayList. 
+ * @param <RatingByTimeComparator>
+ *
+ */
+public class BookLoader<RatingByTimeComparator>
+{
+	Map<Long, Users> users = new HashMap<>(); //Stores all the User objects
+	Map<Long, Books books = new HashMap<>(); //Stores all the Movie objects 
+	List<Rating> ratings = new ArrayList<>(); //Stores all the Rating objects 
+	Map<String, Rating> ratingsMap = new HashMap<>(); //Map to ensure unique ratings
 
-	public static final String r = null;
 
-	public ArrayList<Rating> rating = new ArrayList<Rating>();
-	public HashMap<Long, Books> movies = new HashMap<Long, Books>();
-	public HashMap<Long, Users> users = new HashMap<Long, Users>();
+	RatingByTimeComparator comparator = new RatingByTimeComparator(); //Initialising the comparator
 
-	@SuppressWarnings("resource")
-	public HashMap<Long, Books> importBooks() throws Exception {
-		String url = "./books_small/books.dat";
 
-		BufferedReader in = null;
-		File moviesFile = new File("books_small/movie.dat");
-		Scanner inBooks = new Scanner(moviesFile);
-		String delims = "[|]";// each field in the file is separated(delimited)
-		// by a space.
-		while (inBooks.hasNextLine()) {
-			// get books from data source
-			String booksDetails = inBooks.nextLine().trim();
-			// parse user details string
-			String[] booksTokens = booksDetails.split(delims);
+	public BookLoader()
+	{
 
-			// output user data to console.
-			if (booksTokens.length >= 4) {
-
-				long id = Long.parseLong(booksTokens[0]);
-				Books b = new Books(booksTokens[1], Integer.parseInt(booksTokens[2]), booksTokens[3]);
-				Books.put(new Long(id), b);
-
-			} else {
-				throw new Exception("Are you sure doing the right thing?:" + booksTokens.length);
-			}
-		}
-		inBooks.close();
-
-		return Books;
 	}
 
-	@SuppressWarnings("resource")
-	public HashMap<Long, Users> importUser() throws Exception {
-		String url = "./books_small/users.dat";
+	/**
+	 * Class to parse raw user data and store them in the users map
+	 * @param path
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<Long, Users> parseUserData(String path) throws Exception
+	{
+		File usersFile = new File(path);
+		In inUsers = new In(usersFile);
+		String delims = "[|]";
 
-		BufferedReader in = null;
-		File usersFile = new File("./books_small/users.dat");
-		Scanner inUsers = new Scanner(usersFile);
-		String delims = "[|]";// each field in the file is separated(delimited)
-		// by a space
-		while (inUsers.hasNextLine()) {
-			// get user from data source
-			String usersDetails = inUsers.nextLine().trim();
+		while (!inUsers.isEmpty())
+		{
+			String userDetails = inUsers.readLine();
+			String[] userTokens = userDetails.split(delims);
 
-			// parse user details string
-			String[] usersTokens = usersDetails.split(delims);
+			if (userTokens.length == 7) 
+			{
+				long userId = Long.parseLong(userTokens[0]);
+				String firstName = userTokens[1];
+				String lastName = userTokens[2];
+				int age = Integer.parseInt(userTokens[3]);
+				char gender = userTokens[4].charAt(0);
+				String occupation = userTokens[5];
+				Users user = new Users(userId, firstName, lastName, age, gender, occupation);
+				users.put(userId, user);
 
-			// output user data to console.
-			if (usersTokens.length >= 6) {
-
-				long id = Long.parseLong(usersTokens[0]);
-				Users u = new Users(usersTokens[1], usersTokens[2], Integer.parseInt(usersTokens[3]), usersTokens[4],
-						usersTokens[5], Integer.parseInt(usersTokens[6]));
-				users.put(new Long(id), u);
-			} else {
-				throw new Exception("Are you sure doing the right thing?:" + usersTokens.length);
+			}
+			else
+			{
+				throw new Exception("Invalid member length: "+ userTokens.length);
 			}
 		}
 		inUsers.close();
-
 		return users;
 	}
 
-	private String url = "./data/rating.dat";
-
-	public ArrayList<Rating> getRating() {
-		return rating;
-	}
-
-	public ArrayList<Rating> importRating() throws Exception {
-		BufferedReader in = null;
-		File ratingsFile = new File("././data/rating.dat");
-		Scanner inRatings = new Scanner(ratingsFile);
+	/**
+	 * Parsing of raw movie data
+	 * @param path
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<Long, Books> parseMovieData(String path) throws Exception 
+	{
+		File booksFile = new File(path);
+		In inBooks = new In(booksFile);
 		String delims = "[|]";
-		// inRatings.nextLine();
-		while (inRatings.hasNextLine()) {
-			// get rating from data source
-			String ratingDetails = inRatings.nextLine().trim();
-			// parse user details string
-			String[] ratingTokens = ratingDetails.split(delims);
 
-			// output user data to console.
-			if (ratingTokens.length == 4) {
+		while (!inBooks.isEmpty())
+		{
+			String booksDetails = inBooks.readLine();
+			String[] movieTokens = booksDetails.split(delims);
 
-				long id = Long.parseLong(ratingTokens[0]);
-				Users users = users.get(id);
-				long Books = Long.parseLong(ratingTokens[1]);
-				Books b = Books.get(id);
-				Rating r = new Rating(id, Books, Integer.parseInt(ratingTokens[2]));
-				rating.add(r);
-			} else {
-				throw new Exception("Are you sure doing the right thing?:" + ratingTokens.length);
+			if (BooksTokens.length == 4) 
+			{
+				long booksId = Long.parseLong(movieTokens[0]);
+				String title = booksTokens[1];
+				String releaseDate = Integer.parseInt(releaseDate(booksTokens[2]);
+				String author = booksTokens[3];
+			
+				Books books = new Books(Long.parseLong(booksId), title, releaseDate, author);
+				books.put(booksId, books);
+			}
+			else
+			{
+				throw new Exception("Invalid member length: "+ booksTokens.length);
 			}
 		}
-
-		inRatings.close();
-
-		return rating;
-
+		inBooks.close();
+		return books;
 	}
+
+	/**
+	 * Parsing of raw rating data
+	 * @param path
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Rating> parseRatingData(String path) throws Exception
+	{
+		File ratingsFile = new File(path);
+		In inRatings = new In(ratingsFile);
+		String delims = "[|]";
+
+		while (!inRatings.isEmpty())
+		{
+			String ratingDetails = inRatings.readLine();
+			String[] ratingTokens = ratingDetails.split(delims);
+
+			if (ratingTokens.length == 4) 
+			{
+				long userId = Long.parseLong(ratingTokens[0]);
+				long movieId = Long.parseLong(ratingTokens[1]);
+				Integer rating = Integer.parseInt(ratingTokens[2]);
+				long timestamp = Long.parseLong(ratingTokens[3]);
+				Rating r = new Rating(userId, movieId, rating, timestamp);
+
+				ratings.add(r);
+
+			}
+			else
+			{
+				throw new Exception("Invalid member length: "+ ratingTokens.length);
+			}
+		}
+		inRatings.close();
+		
+		//Sort Rating objects based on the stamp to get most recent rating on duplicates	
+		Collections.sort(ratings, comparator);
+
+		//Using a Map to filter out duplicates
+		for (Rating r: ratings)
+		{
+			ratingsMap.put(r.userId + "u" + r.booksId + "m", r);
+		}
+
+		//Placing duplicates into an ArrayList to sort as Map does not guarantee order
+		List<Rating> ratingsFiltered = new ArrayList<>(ratingsMap.values());
+		Collections.sort(ratingsFiltered, comparator);
+
+//		System.out.println(users.size());
+
+		//Adds respective ratings to users and movies
+		for (Rating rating: ratingsFiltered)
+		{
+			Users user = getUsers(rating.userId);
+			Books books = getBooks(rating.booksId);
+			Rating r = new Rating(user.userId, books.booksId, rating.rating);
+
+			users.addRatedBooks(books.booksId, r);
+			books.addUsersRatings(users.usersId, r);
+		}
+		return ratingsFiltered;
+	}
+
+	public Users getUser(long l)
+	{
+		return users.get(l);
+	}
+
+	public Books getBooks(long i)
+	{
+		return books.get(i);
+	}
+	
+	public int getBooksSize()
+	{
+		return books.size();
+	}
+
 }

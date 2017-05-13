@@ -1,77 +1,86 @@
+/**
+ * @author Alexandre
+ */
 package Model;
-import java.util.ArrayList;
+
+import static com.google.common.base.MoreObjects.toStringHelper;
+
 import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 
+import com.google.common.base.Objects;
 
-@SuppressWarnings("unused")
-public class Users {
-	
-	private static long counter = 0;
-	public final long id;
-	public String firstname;
-	public String lastname;
+/**
+ * class User defines a user of the book matcher system
+ *
+ */
+public class Users
+{
+	public String firstName, lastName, occupation, username;
 	public int age;
-	public String gender;
-	public String occupation;
-	public int rating;
-
-	public List<Rating> ratings = new ArrayList<>();
-
-	public Users(String firstname, String lastname,int age, String gender,  String occupation, int rating) {
-		this.id = ++counter;
-		this.firstname = firstname;
-		this.lastname = lastname;
+	public long userId; //User id 
+	public char gender;
+	
+	//Map of movie's and their rating. Using movie`id
+	public Map<Long, Rating> ratedBooks = new HashMap<>();
+	
+	public Users(long userId, String firstName, String lastName, 
+							int age, char gender, String occupation)
+	{
+		this.userId = userId;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.age = age;
 		this.gender = gender;
 		this.occupation = occupation;
 		
 	}
-@Override 	
-public String toString(){
-	  return toStringHelper(this).addValue(id)
-              .addValue(firstname)
-              .addValue(lastname)
-              .addValue(age)
-              .addValue(gender) 
-              .addValue(occupation)
-              .toString();
-}
 
-
-
-	private Object toStringHelper(Users users2) {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-
-
-	public static HashMap<Long, Users> users = new HashMap<Long, Users>();
-
-
-	@Override
-	public int hashCode() {
-		return java.util.Objects.hashCode(this.lastname, this.firstname,this.age, this.gender,this.occupation, this.rating);
+	/**
+	 * Add this users particular rating of a book 
+	 * @param bookId
+	 * @param rating
+	 */
+	public void addRatedMovies(Long bookId, Rating rating)
+	{
+		ratedBooks.put(bookId, rating);
 	}
 	
-
-	@Override
-	public boolean equals(final Object obj)
-	{
-		if (obj instanceof Users)
-		{
-			final Users other = (Users) obj;
-			return java.util.Objects.equals(firstname, other.firstname)
-					&& Objects.equals(lastname, other.lastname)
-					&& Objects.equals(gender, other.gender)
-					&& Objects.equals(age, other.age)
-					&& Objects.equals(occupation, other.occupation)
-					&& Objects.equals(ratings, other.ratings);
-		}
-		else
-		{
-			return false;}
-	}
+  public String toString()
+  {
+    return toStringHelper(this).addValue(userId)
+    		                   	.addValue(firstName)
+                               .addValue(lastName)
+                               .addValue(age)
+                               .addValue(gender)
+                               .addValue(occupation)
+                               .toString();
+  }
+  
+  @Override  
+  public int hashCode()  
+  {  
+     return Objects.hashCode(this.userId, this.firstName, this.lastName, this.age, this.gender,
+    		 											this.occupation);  
+  }  
+  
+  @Override
+  public boolean equals(final Object obj)
+  {
+    if (obj instanceof Users)
+    {
+      final Users other = (Users) obj;
+      return Objects.equal(userId, other.userId) 
+          && Objects.equal(firstName,  other.firstName)
+          && Objects.equal(lastName,  other.lastName)
+          && Objects.equal(age,  other.age)
+          && Objects.equal(gender,  other.gender)
+          && Objects.equal(occupation,  other.occupation)
+          && Objects.equal(ratedBooks,  other.ratedBooks);
+    }
+    else
+    {
+      return false;
+    }
+  }
 }
