@@ -11,7 +11,6 @@ import java.util.Map;
 import Model.Books;
 import Model.Rating;
 import Model.Users;
-import Utilities.BookLoader;
 import Utilities.Serializer;
 import Utilities.XMLSerializer;
 
@@ -54,7 +53,7 @@ public class SagaAPI {
 
 	public void prime() throws Exception
 	{
-		BookLoader loader = new BookLoader();
+		utils.BookLoader loader = new utils.BookLoader();
 		usersIndex = loader.importUser();
 	    booksIndex = loader.importBooks();
 		ratings = loader.importRating();
@@ -64,8 +63,8 @@ public class SagaAPI {
 
 
 	public Users addUser(String firstname, String lastname,int age, String gender,  String occupation) {
-		Users users = new Users(firstname,lastname,  age, gender, occupation, age);
-		usersIndex.put(users.id, users);
+		Users users = new Users(firstname,lastname,age, gender, occupation);
+		usersIndex.put(users.userId, users);
 		return users;
 	}
 
@@ -75,9 +74,9 @@ public class SagaAPI {
 	}
 
 
-	public Books addBooks(String title, String releaseDate, String url) {
-		Books books = new Books(title, releaseDate, title);
-		booksIndex.put(books.getId(), books);
+	public Books addBooks(String title, String releaseDate, int rating) {
+		Books books = new Books(title, releaseDate, title, 0, null);
+		booksIndex.put(books.getID(), books);
 		return books;
 	}
 
@@ -118,12 +117,15 @@ public class SagaAPI {
 
 	}
 
-
 	public void getRating(long id) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
+
+
+
+	
 
 
 }

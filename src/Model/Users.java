@@ -24,10 +24,10 @@ public class Users
 	//Map of movie's and their rating. Using movie`id
 	public Map<Long, Rating> ratedBooks = new HashMap<>();
 	
-	public Users(long userId, String firstName, String lastName, 
+	public Users( Long ID, String firstName, String LastName,  
 							int age, char gender, String occupation)
 	{
-		this.userId = userId;
+		this.userId = ID;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
@@ -35,6 +35,8 @@ public class Users
 		this.occupation = occupation;
 		
 	}
+
+	
 
 	/**
 	 * Add this users particular rating of a book 
