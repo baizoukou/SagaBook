@@ -5,6 +5,7 @@ import java.util.List;
 
 import Model.Books;
 import Utilities.Serializer;
+import Utilities.XMLSerializer;
 import asg.cliche.Command;
 import asg.cliche.Param;
 import asg.cliche.Shell;
@@ -32,12 +33,12 @@ import asg.cliche.ShellFactory;
 @SuppressWarnings("unused")
 public class Driver {
 
-	public Controller.SagaAPI SagaAPI;
+	public Controller.SagaAPI SagaAPI = new Controller.SagaAPI(); 
 
 	public void Main() throws Exception
 	{
 		File  datastore = new File("datastore.xml");// is calling file from data store if file not exist call from prime
-		Serializer serializer = new Serializer(datastore);
+		Serializer serializer = new XMLSerializer(datastore);
 
 		SagaAPI = new Controller.SagaAPI(serializer);
 
@@ -66,7 +67,8 @@ public class Driver {
 	public void addUsers(@Param(name = "firstname") String firstname, @Param(name = "lastname") String lastname,
 			@Param(name = "age") int age, @Param(name = "gender") String gender,
 			@Param(name = "occupation") String occupation) {
-		SagaAPI.addUser(firstname, lastname, age, gender, occupation);
+		char g = gender.charAt(0);
+		SagaAPI.addUser(firstname, lastname, age, g, occupation);
 	}
 
 	@Command(description = "Delete a Users")
@@ -76,8 +78,8 @@ public class Driver {
 
 	@Command(description = "Add a Book")
 	public void addBooks(@Param(name = "title") String title, @Param(name = "releaseDate") String releaseDate,
-			@Param(name = "url") String name) {
-		SagaAPI.addBooks(title, releaseDate, name);
+			@Param(name = "author") String author) {
+		SagaAPI.addBooks(title, releaseDate, author);
 
 	}
 
@@ -96,7 +98,7 @@ public class Driver {
 	@Command(description="Get  user recomendation")// from the movie list iterate through and get top ten movies
 	public void getTop10 ()
 	{
-		List<Books> books = SagaAPI.getSagaBook();
+		List<Books> books = SagaAPI.getTopTenBook();
 		for (Books b : books) {
 			System.out.println(b);
 		}

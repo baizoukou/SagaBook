@@ -80,8 +80,13 @@ public class SagaAPI {
 		booksIndex.put(books.ID, books);
 		return books;
 	}
+	
+	public Users removeBooks(Long id) {
+		booksIndex.remove(id);
+		return null;
+	}
 
-	public List<Books> getSagaBook() {
+	public List<Books> getTopTenBook() {// Sort books by ratings class as user recommender
 		int n = 10;
 		System.out.println(booksIndex.size());
 		List<Books> books2 = new ArrayList<Books>(booksIndex.values());
@@ -120,11 +125,6 @@ public class SagaAPI {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
-
-	
 
 
 }

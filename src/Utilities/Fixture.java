@@ -10,19 +10,19 @@ public class Fixture {
 
   public static Users[] users =
   {
-    new Users ("marge", "simpson", 12,  "m" , "P", 0),
-    new Users ("lisa",  "simpson", 5,   "f", "i", 0),
-    new Users ("bart",  "simpson", 9,   "m", "o", 0),
-    new Users ("maggie","simpson", 47, "f", "r", 0)
+    new Users (1L, "marge", "simpson", 12,  'm' , "P"),
+    new Users (2L, "lisa",  "simpson", 5,   'f', "i"),
+    new Users (3L, "bart",  "simpson", 9,   'f', "o"),
+    new Users (4L, "maggie","simpson", 47, 'm', "r")
   };
 
   public static Books[] books =
   {
-    new Books ("walk",  "fridge", "hjxzghjgd"),
-    new Books ("walk",  "bar",    "hjxzghjgd"),
-    new Books ("run",   "work",   "hjxzghjgd"),
-    new Books ("walk",  "shop",   "hjxzghjgd"),
-    new Books ("cycle", "school", "hjxzghjgd")
+    new Books (1L, "walk",  "fridge", "hjxzghjgd"),
+    new Books (2L, "walk",  "bar",    "hjxzghjgd"),
+    new Books (3L, "run",   "work",   "hjxzghjgd"),
+    new Books (4L, "walk",  "shop",   "hjxzghjgd"),
+    new Books (5L, "cycle", "school", "hjxzghjgd")
   };
 
   public static Rating[]ratings =
