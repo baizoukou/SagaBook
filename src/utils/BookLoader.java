@@ -41,18 +41,16 @@ public class BookLoader {
 
 	public static final String r = null;
 
-	public ArrayList<Rating> rating = new ArrayList<Rating>();
-	public  HashMap<Long, Books> movies = new HashMap<Long, Books>();
-	public  HashMap<Long, Users> users = new HashMap<Long, Users>();
+	public static  ArrayList<Rating> rating = new ArrayList<Rating>();
+	public static HashMap<Long, Books> books = new HashMap<Long, Books>();
+	public static  HashMap<Long, Users> users = new HashMap<Long, Users>();
 
 	@SuppressWarnings("resource")
 	public   HashMap<Long, Books> importBooks() throws Exception 	
 	{
 	
-
-
 		BufferedReader in = null;
-		File booksFile = new File("books_small/books.dat");
+		File booksFile = new File("./books_small/books.dat");
 		Scanner inBooks = new Scanner(booksFile);
 		String delims = "[|]";// each field in the file is separated(delimited)
 		// by a space. 
@@ -66,8 +64,8 @@ public class BookLoader {
 			if (BooksTokens.length >= 4) {
 
 				long id = Long.parseLong(BooksTokens[0]);
-				Books b = new Books( BooksTokens[1],BooksTokens[2],BooksTokens[3], id, null );
-				Books.put(new Long(id), b);
+				Books b = new Books( BooksTokens[1],BooksTokens[2],BooksTokens[3], null );
+				books.put(new Long(id), b);
 
 
 			}
@@ -77,17 +75,14 @@ public class BookLoader {
 		}
 		inBooks.close();
 
-		return movies;
+		return books;
 	}
-
 
 	@SuppressWarnings("resource")
 	public HashMap<Long, Users> importUser() throws Exception 
 	{
-		String url = "./books_small/user.dat";
-
 		BufferedReader in = null;
-		File usersFile = new File("./books_small/user.dat");
+		File usersFile = new File("./books_small/users.dat");
 		Scanner inUsers = new Scanner(usersFile);
 		String delims = "[|]";// each field in the file is separated(delimited)
 		// by a space
@@ -102,7 +97,7 @@ public class BookLoader {
 			if (usersTokens.length >= 6) {
 
 				long id = Long.parseLong(usersTokens[0]);
-				Users u = new Users(usersTokens[1], usersTokens[2], Integer.parseInt(usersTokens[3]), usersTokens[4], usersTokens[5]);
+				Users u = new Users(usersTokens[1],usersTokens[2],Integer.parseInt(usersTokens[3]), usersTokens[4], usersTokens[5]);
 				users.put(new Long(id), u);
 			}
 			else{
@@ -114,16 +109,13 @@ public class BookLoader {
 		return users;
 	}
 
-
-	private String url = "./books_small/rating.dat";
-
 	public ArrayList<Rating> getRating() {
 		return rating;
 	}
 
 	public ArrayList<Rating> importRating() throws Exception {
 		BufferedReader in = null;
-		File ratingsFile = new File("././books_small/rating.dat");
+		File ratingsFile = new File("././books_small/ratings.dat");
 		Scanner inRatings = new Scanner(ratingsFile);
 		String delims = "[|]";
 		//			inRatings.nextLine();

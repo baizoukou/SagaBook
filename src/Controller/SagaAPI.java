@@ -75,7 +75,7 @@ public class SagaAPI {
 
 
 	public Books addBooks(String title, String releaseDate, int rating) {
-		Books books = new Books(title, releaseDate, title, 0, null);
+		Books books = new Books(title, releaseDate, 0);
 		booksIndex.put(books.getID(), books);
 		return books;
 	}

@@ -16,21 +16,22 @@ import com.google.common.base.Objects;
  */
 public class Books
 {
+	public long ID;
 	public String title;
 	public String releaseDate;
-	public String author;
-	public long booksId;
+	//public String author;
+	
 	
 	public Map<Long, Rating> userRatings = new HashMap<>();
 
 	
 
-	public Books(String title, String releaseDate, String author, long bookId, Map<Long, Rating> userRatings) {
+	public Books( String title, String releaseDate, String author, Map<Long, Rating> userRatings) {
 		super();
+		this.ID = ID;
 		this.title = title;
 		this.releaseDate = releaseDate;
-		this.author = author;
-		this.booksId = booksId;
+		//this.author = author;
 		this.userRatings = userRatings;
 	}
 
@@ -67,16 +68,16 @@ public class Books
 
 	@Override
 	public String toString() {
-		return "Books [title=" + title + ", releaseDate=" + releaseDate + ", author=" + author + ", bookId=" + booksId
-				+ ", userRatings=" + userRatings + ", getAverageRating()=" + getAverageRating() + ", hashCode()="
+		return "Books [ ID=" + ID
+				+ ",title=" + title + ", releaseDate=" + releaseDate + ",  userRatings=" + userRatings + ", getAverageRating()=" + getAverageRating() + ", hashCode()="
 				+ hashCode() + ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
 	}
 
-	@Override  
-	public int hashCode()  
-	{  
-		return Objects.hashCode(this.booksId, this.title, this.releaseDate, this.author);  
-	}  
+//	@Override  
+//	public int hashCode()  
+//	{  
+//		return Objects.hashCode(this.booksId, this.title, this.releaseDate, this.author);  
+//	}  
 
 	@Override
 	public boolean equals(final Object obj)
@@ -84,11 +85,11 @@ public class Books
 		if (obj instanceof Books)
 		{
 			final Books other = (Books) obj;
-			return Objects.equal(booksId, other.booksId) 
+			return Objects.equal(ID, other.ID) 
 					&& Objects.equal(title,  other.title)
 					&& Objects.equal(releaseDate,  other.releaseDate)
-					&& Objects.equal(userRatings,  other.userRatings)
-					&& Objects.equal(author,  other.author);
+					&& Objects.equal(userRatings,  other.userRatings);
+					//&& Objects.equal(author,  other.author);
 		}
 		else
 		{

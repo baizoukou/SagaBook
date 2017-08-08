@@ -18,18 +18,18 @@ public class Rating
 	public Integer rating;
 	public double averageRating; //Calculated based on the average user ratings of a movie Calculated in the book class
 
-	public Rating(long userId, long movieId, Integer rating, long stamp)
+	public Rating(long userId, long booksId, Integer rating, long stamp)
 	{
 		this.userId = userId;
-		this.booksId = movieId;
+		this.booksId = booksId;
 		this.rating = rating;
 		this.stamp = stamp;
 	}
 
-	public Rating(long userId, long movieId, int rating)
+	public Rating(long userId, long booksId, int rating)
 	{
 		this.userId = userId;
-		this.booksId = movieId;
+		this.booksId = booksId;
 		this.rating = rating;
 	}
 	
