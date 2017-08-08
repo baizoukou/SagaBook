@@ -43,6 +43,8 @@ public class BookLoader {
 
 	public static  ArrayList<Rating> rating = new ArrayList<Rating>();
 	public static HashMap<Long, Books> books = new HashMap<Long, Books>();
+	public static Long usercounter = 1L;
+	public static Long bookcounter = 1L;
 	public static  HashMap<Long, Users> users = new HashMap<Long, Users>();
 
 	@SuppressWarnings("resource")
@@ -62,9 +64,14 @@ public class BookLoader {
 
 			// output user data to console.
 			if (BooksTokens.length >= 4) {
+				
+				
 
 				long id = Long.parseLong(BooksTokens[0]);
-				Books b = new Books( BooksTokens[1],BooksTokens[2],BooksTokens[3], null );
+				if (bookcounter <= id){
+					bookcounter ++;
+				}
+				Books b = new Books(id, BooksTokens[1],BooksTokens[2],BooksTokens[3]);
 				books.put(new Long(id), b);
 
 
@@ -94,10 +101,13 @@ public class BookLoader {
 			String[] usersTokens = usersDetails.split(delims);
 
 			// output user data to console.
-			if (usersTokens.length >= 6) {
+			if (usersTokens.length >= 7) {
 
 				long id = Long.parseLong(usersTokens[0]);
-				Users u = new Users(usersTokens[1],usersTokens[2],Integer.parseInt(usersTokens[3]), usersTokens[4], usersTokens[5]);
+				if (usercounter <= id){
+					usercounter ++;
+				}
+				Users u = new Users(id,usersTokens[1],usersTokens[2],Integer.parseInt(usersTokens[3]),  usersTokens[4].charAt(0), usersTokens[5]);
 				users.put(new Long(id), u);
 			}
 			else{
@@ -105,7 +115,6 @@ public class BookLoader {
 			}
 		}
 		inUsers.close();
-
 		return users;
 	}
 
@@ -131,7 +140,7 @@ public class BookLoader {
 				long id = Long.parseLong(ratingTokens[0]);
 				Users user = users.get(id);
 				long Books = Long.parseLong(ratingTokens[1]);
-				Books book = book.get(Books);
+				Books book = books.get(id);
 				Rating r = new Rating(id,Books,Integer.parseInt(ratingTokens[2]));
 				rating.add(r);
 			}

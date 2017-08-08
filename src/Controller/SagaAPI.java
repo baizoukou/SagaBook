@@ -13,6 +13,7 @@ import Model.Rating;
 import Model.Users;
 import Utilities.Serializer;
 import Utilities.XMLSerializer;
+import utils.BookLoader;
 
 /*
  * *author alexandre Baizoukou WIT Bsc Applied Computing
@@ -61,9 +62,9 @@ public class SagaAPI {
 
 	}
 
-
-	public Users addUser(String firstname, String lastname,int age, String gender,  String occupation) {
-		Users users = new Users(firstname,lastname,age, gender, occupation);
+// keep track and oto encrement each time
+	public Users addUser(String firstname, String lastname,int age, char gender,  String occupation) {
+		Users users = new Users(BookLoader.usercounter++, firstname,lastname,age, gender, occupation);
 		usersIndex.put(users.userId, users);
 		return users;
 	}
@@ -74,9 +75,9 @@ public class SagaAPI {
 	}
 
 
-	public Books addBooks(String title, String releaseDate, int rating) {
-		Books books = new Books(title, releaseDate, 0);
-		booksIndex.put(books.getID(), books);
+	public Books addBooks(String title, String releaseDate,String author) {
+		Books books = new Books(BookLoader.bookcounter++, title, releaseDate, author);
+		booksIndex.put(books.ID, books);
 		return books;
 	}
 
@@ -87,8 +88,6 @@ public class SagaAPI {
 		Collections.sort(books2);
     	return books2.subList(0, n);
 	}
-
-	
 
 	public Rating addRating(Long userid, Long movieid, int therating) {
 		Rating rating = new Rating(userid, movieid, therating);

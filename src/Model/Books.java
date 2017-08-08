@@ -14,24 +14,24 @@ import com.google.common.base.Objects;
  * Books class provides the attributes of book object
  *
  */
-public class Books
+public class Books implements Comparable<Books>
 {
 	public long ID;
 	public String title;
 	public String releaseDate;
-	//public String author;
+	public String author;
 	
 	
 	public Map<Long, Rating> userRatings = new HashMap<>();
 
 	
 
-	public Books( String title, String releaseDate, String author, Map<Long, Rating> userRatings) {
+	public Books( Long ID,String title, String releaseDate, String author) {
 		super();
 		this.ID = ID;
 		this.title = title;
 		this.releaseDate = releaseDate;
-		//this.author = author;
+		this.author = author;
 		this.userRatings = userRatings;
 	}
 
@@ -69,7 +69,7 @@ public class Books
 	@Override
 	public String toString() {
 		return "Books [ ID=" + ID
-				+ ",title=" + title + ", releaseDate=" + releaseDate + ",  userRatings=" + userRatings + ", getAverageRating()=" + getAverageRating() + ", hashCode()="
+				+ ",title=" + title + ", releaseDate=" + releaseDate + ",author=" + author + ",  userRatings=" + userRatings + ", getAverageRating()=" + getAverageRating() + ", hashCode()="
 				+ hashCode() + ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
 	}
 
@@ -88,7 +88,8 @@ public class Books
 			return Objects.equal(ID, other.ID) 
 					&& Objects.equal(title,  other.title)
 					&& Objects.equal(releaseDate,  other.releaseDate)
-					&& Objects.equal(userRatings,  other.userRatings);
+					&& Objects.equal(author,  other.author);
+					//&& Objects.equal(userRatings,  other.userRatings);
 					//&& Objects.equal(author,  other.author);
 		}
 		else
@@ -96,4 +97,22 @@ public class Books
 			return false;
 		}
 	}
+
+	@Override
+	public int compareTo(Books b){ // return either o or -1
+		
+		double d1 =  this.getAverageRating();
+		double d2 = b.getAverageRating();
+		
+		if (d1 < d2){
+			return - 1;
+		}
+		else{
+			if(d1 > d2){
+				return 1; 
+			}else
+					return 0;
+			}
+		}
+	
 }
