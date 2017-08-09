@@ -86,12 +86,13 @@ public class SagaAPI {
 		return null;
 	}
 // Book recommender
+	
 	public List<Books> getTopTenBook() {// Sort books by ratings class as user recommender
 		int n = 10;
 		System.out.println(booksIndex.size());
-		List<Books> books2 = new ArrayList<Books>(booksIndex.values());
-		Collections.sort(books2);
-    	return books2.subList(0, n);
+		List<Books> books = new ArrayList<Books>(booksIndex.values());
+		Collections.sort(books);
+    	return books.subList(0, n);
 	}
 
 	public Rating addRating(Long userid, Long movieid, int therating) {
@@ -120,12 +121,17 @@ public class SagaAPI {
 		booksIndex = (Map<Long, Books>) serializer.pop();
 
 	}
-
-	public Rating getRating(long id) {
-		Rating rating = new Rating(id,id);
-		//ratings.get();
-		return rating;
-		
+	
+    public Books getBook(Long id ) {
+    return 	BookLoader.books.get(id);
+    	
+    }
+    // look up book id in the hashmap then return the average rating
+    
+	public double getRating(long id) {
+		Books b = getBook (id);// calling getBook method
+		double d = b.getAverageRating();// calling getAverageRating store in d
+		return d;
 	}
 
 
