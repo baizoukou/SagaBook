@@ -20,16 +20,16 @@ public class FixtureTest
 
   public static Books[] booksFixtures =
   {
-  	new Books(1L, "Toy", 1995, "osca"),
-  	new Books(2L, "GoldenEye (1995)", 1995, "bray"),
-  	new Books(3L, "Four Rooms (1995)", 1995, "rick"),
-  	new Books(4L, "Get Shorty (1995)", 1995, "debo"),
-  	new Books(5L, "Copycat (1995)", 1995, "staph"),
-  	new Books(6L, "waterford", 1995, "martin"),
-  	new Books(7L, "Sweet marriage", 1995, "roland"),
-  	new Books(8L, "awana", 1995, "alex"),
-  	new Books(9L, "man kind", 1995, "brice"),
-  	new Books(10L, "Ireland", 1996, "theo")
+  	new Books(1L, "Toy", "1995", "osca"),
+  	new Books(2L, "D7", "1995", "bray"),
+  	new Books(3L, "Four)", "1995", "rick"),
+  	new Books(4L, "Get out", "1995", "debo"),
+  	new Books(5L, "Copy", "1995", "staph"),
+  	new Books(6L, "waterford", "1995", "martin"),
+  	new Books(7L, "Sweet marriage", "1995", "roland"),
+  	new Books(8L, "awana", "1995", "alex"),
+  	new Books(9L, "man kind", "1995", "brice"),
+  	new Books(10L, "Ireland", "1996", "theo")
   };
  
   public static Rating[]ratingsFixtures =

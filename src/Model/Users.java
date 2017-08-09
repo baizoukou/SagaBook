@@ -29,7 +29,7 @@ public class Users
 	{
 		this.userId = ID;
 		this.firstName = firstName;
-		this.lastName = lastName;
+		this.lastName = LastName;
 		this.age = age;
 		this.gender = gender;
 		this.occupation = occupation;

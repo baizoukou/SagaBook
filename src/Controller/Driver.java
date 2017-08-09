@@ -85,7 +85,7 @@ public class Driver {
 
 	@Command(description = "Add a Rating")
 	public void addRating(@Param(name = "users") Long user, @Param(name = "books") Long books,
-			@Param(name = "rating") int rating, @Param(name = "average") double average) {
+			@Param(name = "rating") int rating) {
 		SagaAPI.addRating(user, books, rating);
 	}
 

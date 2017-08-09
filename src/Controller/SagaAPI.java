@@ -85,7 +85,7 @@ public class SagaAPI {
 		booksIndex.remove(id);
 		return null;
 	}
-
+// Book recommender
 	public List<Books> getTopTenBook() {// Sort books by ratings class as user recommender
 		int n = 10;
 		System.out.println(booksIndex.size());
@@ -103,7 +103,7 @@ public class SagaAPI {
 
 
 	public void store() throws Exception {
-		// TODO Auto-generated method stub
+		
 		
 		serializer.push(booksIndex);
 		serializer.push(usersIndex);
@@ -121,8 +121,10 @@ public class SagaAPI {
 
 	}
 
-	public void getRating(long id) {
-		// TODO Auto-generated method stub
+	public Rating getRating(long id) {
+		Rating rating = new Rating(id,id);
+		//ratings.get();
+		return rating;
 		
 	}
 

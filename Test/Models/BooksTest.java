@@ -24,7 +24,7 @@ public class BooksTest
 	@Before
 	public void setUp() throws Exception
 	{
-		books = new Books(2, "applied", 1996, "Alex");
+		books = new Books(2L, "applied", "1996", "Jhon");
 	}
 
 	@After
@@ -38,9 +38,9 @@ public class BooksTest
 	@Test
 	public void testCreateBooks()
 	{
-		assertEquals(2,books);
+		assertEquals(2,books.ID);
 		assertEquals("applied", books.title);
-		assertEquals(1936, books.releaseDate);
+		assertEquals("1996", books.releaseDate);
 		assertEquals("Jhon", books.author);
 	}
 
@@ -50,9 +50,9 @@ public class BooksTest
 	@Test
 	public void testGetAverageRating()
 	{
-		books.addUserRatings(1L, new Rating(1, books, 1));
-		books.addUserRatings(2L, new Rating(1, books, 3));
-		books.addUserRatings(3L, new Rating(1, books, 5));
-		assertEquals(12.0/3, books.getAverageRating(), 0.01);
+		books.addUserRatings(1L, new Rating(1L, books.ID, 1, 1L));
+		books.addUserRatings(2L, new Rating(1, books.ID, 3, 2L));
+		books.addUserRatings(3L, new Rating(1, books.ID, 5, 4L));
+		assertEquals(3.0, books.getAverageRating(), 0.01);
 	}
 }
