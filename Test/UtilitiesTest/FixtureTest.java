@@ -121,51 +121,51 @@ public class FixtureTest
 
   public void userRatingsFixtures()
   {
-  	booksFixtures[0].userRatings.put(1L, new Rating(1, booksFixtures[0].ID, 5));
-  	booksFixtures[0].userRatings.put(2L, new Rating(2, booksFixtures[0].ID, 1));
-  	booksFixtures[0].userRatings.put(3L, new Rating(3, booksFixtures[0].ID, 3));
-  	booksFixtures[0].userRatings.put(4L, new Rating(4, booksFixtures[0].ID, 5));
-  	booksFixtures[0].userRatings.put(5L, new Rating(5, booksFixtures[0].ID, 3));
+  	booksFixtures[0].userRatings.add( new Rating(1, booksFixtures[0].ID, 5));
+  	booksFixtures[0].userRatings.add( new Rating(2, booksFixtures[0].ID, 1));
+  	booksFixtures[0].userRatings.add( new Rating(3, booksFixtures[0].ID, 3));
+  	booksFixtures[0].userRatings.add( new Rating(4, booksFixtures[0].ID, 5));
+  	booksFixtures[0].userRatings.add( new Rating(5, booksFixtures[0].ID, 3));
   	
-  	booksFixtures[1].userRatings.put(1L, new Rating(1, booksFixtures[1].ID, 5));
-  	booksFixtures[1].userRatings.put(2L, new Rating(2, booksFixtures[1].ID, 3));
-  	booksFixtures[1].userRatings.put(3L, new Rating(3, booksFixtures[1].ID, -5));
-  	booksFixtures[1].userRatings.put(5L, new Rating(5, booksFixtures[1].ID, 1));
+  	booksFixtures[1].userRatings.add( new Rating(1, booksFixtures[1].ID, 5));
+  	booksFixtures[1].userRatings.add( new Rating(2, booksFixtures[1].ID, 3));
+  	booksFixtures[1].userRatings.add( new Rating(3, booksFixtures[1].ID, -5));
+  	booksFixtures[1].userRatings.add( new Rating(5, booksFixtures[1].ID, 1));
   	
-  	booksFixtures[2].userRatings.put(1L, new Rating(1, booksFixtures[2].ID, 3));
-  	booksFixtures[2].userRatings.put(2L, new Rating(2, booksFixtures[2].ID, 3));
-  	booksFixtures[2].userRatings.put(3L, new Rating(3, booksFixtures[2].ID, -3));
-  	booksFixtures[2].userRatings.put(4L, new Rating(4, booksFixtures[2].ID, 5));
-  	booksFixtures[2].userRatings.put(5L, new Rating(5, booksFixtures[2].ID, 1));
+  	booksFixtures[2].userRatings.add( new Rating(1, booksFixtures[2].ID, 3));
+  	booksFixtures[2].userRatings.add( new Rating(2, booksFixtures[2].ID, 3));
+  	booksFixtures[2].userRatings.add( new Rating(3, booksFixtures[2].ID, -3));
+  	booksFixtures[2].userRatings.add( new Rating(4, booksFixtures[2].ID, 5));
+  	booksFixtures[2].userRatings.add( new Rating(5, booksFixtures[2].ID, 1));
   	
-  	booksFixtures[3].userRatings.put(2L, new Rating(2, booksFixtures[3].ID, -5));
-  	booksFixtures[3].userRatings.put(3L, new Rating(3, booksFixtures[3].ID, -3));
-  	booksFixtures[3].userRatings.put(4L, new Rating(4, booksFixtures[3].ID, 5));
-  	booksFixtures[3].userRatings.put(5L, new Rating(5, booksFixtures[3].ID, -5));
+  	booksFixtures[3].userRatings.add( new Rating(2, booksFixtures[3].ID, -5));
+  	booksFixtures[3].userRatings.add( new Rating(3, booksFixtures[3].ID, -3));
+  	booksFixtures[3].userRatings.add( new Rating(4, booksFixtures[3].ID, 5));
+  	booksFixtures[3].userRatings.add( new Rating(5, booksFixtures[3].ID, -5));
   	
-  	booksFixtures[4].userRatings.put(1L, new Rating(1, booksFixtures[4].ID, 3));
-  	booksFixtures[4].userRatings.put(3L, new Rating(3, booksFixtures[4].ID, -5));
-  	booksFixtures[4].userRatings.put(5L, new Rating(5, booksFixtures[4].ID, -3));
+  	booksFixtures[4].userRatings.add( new Rating(1, booksFixtures[4].ID, 3));
+  	booksFixtures[4].userRatings.add(new Rating(3, booksFixtures[4].ID, -5));
+  	booksFixtures[4].userRatings.add( new Rating(5, booksFixtures[4].ID, -3));
   	
-  	booksFixtures[5].userRatings.put(4L, new Rating(4, booksFixtures[5].ID, 1));
+  	booksFixtures[5].userRatings.add( new Rating(4, booksFixtures[5].ID, 1));
   	
-  	booksFixtures[6].userRatings.put(1L, new Rating(1, booksFixtures[6].ID, 1));
-  	booksFixtures[6].userRatings.put(2L, new Rating(2, booksFixtures[6].ID, 3));
-  	booksFixtures[6].userRatings.put(3L, new Rating(3, booksFixtures[6].ID, -5));
-  	booksFixtures[6].userRatings.put(4L, new Rating(4, booksFixtures[6].ID, 3));
-  	booksFixtures[6].userRatings.put(5L, new Rating(5, booksFixtures[6].ID, 3));
+  	booksFixtures[6].userRatings.add( new Rating(1, booksFixtures[6].ID, 1));
+  	booksFixtures[6].userRatings.add( new Rating(2, booksFixtures[6].ID, 3));
+  	booksFixtures[6].userRatings.add( new Rating(3, booksFixtures[6].ID, -5));
+  	booksFixtures[6].userRatings.add( new Rating(4, booksFixtures[6].ID, 3));
+  	booksFixtures[6].userRatings.add( new Rating(5, booksFixtures[6].ID, 3));
   	
-  	booksFixtures[7].userRatings.put(3L, new Rating(3, booksFixtures[7].ID, 5));
-  	booksFixtures[7].userRatings.put(4L, new Rating(4, booksFixtures[7].ID, 3));
-  	booksFixtures[7].userRatings.put(5L, new Rating(5, booksFixtures[7].ID, 1));
+  	booksFixtures[7].userRatings.add( new Rating(3, booksFixtures[7].ID, 5));
+  	booksFixtures[7].userRatings.add( new Rating(4, booksFixtures[7].ID, 3));
+  	booksFixtures[7].userRatings.add( new Rating(5, booksFixtures[7].ID, 1));
  
-  	booksFixtures[8].userRatings.put(1L, new Rating(1, booksFixtures[8].ID, 1));
-  	booksFixtures[8].userRatings.put(5L, new Rating(5, booksFixtures[8].ID, -5));
+  	booksFixtures[8].userRatings.add( new Rating(1, booksFixtures[8].ID, 1));
+  	booksFixtures[8].userRatings.add( new Rating(5, booksFixtures[8].ID, -5));
 
-  	booksFixtures[9].userRatings.put(1L, new Rating(1, booksFixtures[9].ID, 3));
-  	booksFixtures[9].userRatings.put(2L, new Rating(2, booksFixtures[9].ID, 5));
-  	booksFixtures[9].userRatings.put(4L, new Rating(4, booksFixtures[9].ID, 3));
-  	booksFixtures[9].userRatings.put(5L, new Rating(5, booksFixtures[9].ID, -5));
+  	booksFixtures[9].userRatings.add(new Rating(1, booksFixtures[9].ID, 3));
+  	booksFixtures[9].userRatings.add( new Rating(2, booksFixtures[9].ID, 5));
+  	booksFixtures[9].userRatings.add( new Rating(4, booksFixtures[9].ID, 3));
+  	booksFixtures[9].userRatings.add( new Rating(5, booksFixtures[9].ID, -5));
   }
   
 }

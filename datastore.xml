@@ -1,0 +1,591 @@
+<object-stream>
+  <java.util.Stack serialization="custom">
+    <unserializable-parents/>
+    <vector>
+      <default>
+        <capacityIncrement>0</capacityIncrement>
+        <elementCount>3</elementCount>
+        <elementData>
+          <map>
+            <entry>
+              <long>1</long>
+              <Model.Books>
+                <ID>1</ID>
+                <title>High Fidelity</title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author>Nick Hornby</author>
+                <userRatings>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>1</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>1</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>2</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>3</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>5</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>5</booksId>
+                    <stamp>0</stamp>
+                    <rating>-3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>7</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>9</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>1</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                </userRatings>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>2</long>
+              <Model.Books>
+                <ID>2</ID>
+                <title>Northern Lights</title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author>Franck</author>
+                <userRatings>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>1</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>1</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>2</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>2</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>3</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>7</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>2</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                </userRatings>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>3</long>
+              <Model.Books>
+                <ID>3</ID>
+                <title>Wicked</title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author>Gregory Maguire</author>
+                <userRatings>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>1</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>2</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>3</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>3</booksId>
+                    <stamp>0</stamp>
+                    <rating>-3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>-3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>5</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>5</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>7</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>3</userId>
+                    <booksId>8</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                </userRatings>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>4</long>
+              <Model.Books>
+                <ID>4</ID>
+                <title>A Child Called It</title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author>Dave Pelzer</author>
+                <userRatings>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>1</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>3</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>6</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>7</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>4</userId>
+                    <booksId>8</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                </userRatings>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>5</long>
+              <Model.Books>
+                <ID>5</ID>
+                <title>Kiss the Girls</title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author>James Patterson</author>
+                <userRatings>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>10</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>1</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>2</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>3</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>4</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>5</booksId>
+                    <stamp>0</stamp>
+                    <rating>-3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>7</booksId>
+                    <stamp>0</stamp>
+                    <rating>3</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>8</booksId>
+                    <stamp>0</stamp>
+                    <rating>1</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                  <Model.Rating>
+                    <userId>5</userId>
+                    <booksId>9</booksId>
+                    <stamp>0</stamp>
+                    <rating>-5</rating>
+                    <averageRating>0.0</averageRating>
+                  </Model.Rating>
+                </userRatings>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>6</long>
+              <Model.Books>
+                <ID>6</ID>
+                <title>Where the Heart Is</title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author>Billy Lets</author>
+                <userRatings/>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>7</long>
+              <Model.Books>
+                <ID>7</ID>
+                <title>Blindness </title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author> Jose Saramago</author>
+                <userRatings/>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>8</long>
+              <Model.Books>
+                <ID>8</ID>
+                <title>The Reader </title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author>Bernhard Schlink</author>
+                <userRatings/>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>9</long>
+              <Model.Books>
+                <ID>9</ID>
+                <title>The Rainmaker </title>
+                <releaseDate>01-Jan-1995</releaseDate>
+                <author> John Grisham</author>
+                <userRatings/>
+              </Model.Books>
+            </entry>
+            <entry>
+              <long>10</long>
+              <Model.Books>
+                <ID>10</ID>
+                <title>Lies My Teacher Told Me </title>
+                <releaseDate>22-Jan-1996</releaseDate>
+                <author>James W. Loewen</author>
+                <userRatings/>
+              </Model.Books>
+            </entry>
+          </map>
+          <map>
+            <entry>
+              <long>1</long>
+              <Model.Users>
+                <firstName>Leonard</firstName>
+                <lastName>Hernandez</lastName>
+                <occupation>technician</occupation>
+                <age>24</age>
+                <userId>1</userId>
+                <gender>M</gender>
+                <ratedBooks/>
+              </Model.Users>
+            </entry>
+            <entry>
+              <long>2</long>
+              <Model.Users>
+                <firstName>Melody</firstName>
+                <lastName>Roberson</lastName>
+                <occupation>other</occupation>
+                <age>53</age>
+                <userId>2</userId>
+                <gender>F</gender>
+                <ratedBooks/>
+              </Model.Users>
+            </entry>
+            <entry>
+              <long>3</long>
+              <Model.Users>
+                <firstName>Gregory</firstName>
+                <lastName>Newton</lastName>
+                <occupation>writer</occupation>
+                <age>23</age>
+                <userId>3</userId>
+                <gender>M</gender>
+                <ratedBooks/>
+              </Model.Users>
+            </entry>
+            <entry>
+              <long>4</long>
+              <Model.Users>
+                <firstName>Oliver</firstName>
+                <lastName>George</lastName>
+                <occupation>technician</occupation>
+                <age>24</age>
+                <userId>4</userId>
+                <gender>M</gender>
+                <ratedBooks/>
+              </Model.Users>
+            </entry>
+            <entry>
+              <long>5</long>
+              <Model.Users>
+                <firstName>Jenna</firstName>
+                <lastName>Parker</lastName>
+                <occupation>other</occupation>
+                <age>33</age>
+                <userId>5</userId>
+                <gender>F</gender>
+                <ratedBooks/>
+              </Model.Users>
+            </entry>
+          </map>
+          <list>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[2]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[2]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[2]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[3]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[4]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[3]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[2]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[3]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[5]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[6]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[2]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[3]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[4]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[7]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[3]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[4]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[4]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[4]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[8]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[5]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[6]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[5]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[6]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[7]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[5]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[6]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[5]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[6]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[7]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[8]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[7]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[8]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[7]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[9]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[9]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[9]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[8]"/>
+            <Model.Rating reference="../../map/entry[3]/Model.Books/userRatings/Model.Rating[10]"/>
+            <Model.Rating reference="../../map/entry[4]/Model.Books/userRatings/Model.Rating[10]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[9]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[8]"/>
+            <Model.Rating reference="../../map/entry[5]/Model.Books/userRatings/Model.Rating[10]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[9]"/>
+            <Model.Rating reference="../../map/entry/Model.Books/userRatings/Model.Rating[10]"/>
+            <Model.Rating reference="../../map/entry[2]/Model.Books/userRatings/Model.Rating[10]"/>
+          </list>
+          <null/>
+          <null/>
+          <null/>
+          <null/>
+          <null/>
+          <null/>
+          <null/>
+        </elementData>
+      </default>
+    </vector>
+  </java.util.Stack>
+</object-stream>

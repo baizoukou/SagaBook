@@ -5,7 +5,9 @@ package Model;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.common.base.Objects;
@@ -22,7 +24,7 @@ public class Books implements Comparable<Books>
 	public String author;
 	
 	
-	public Map<Long, Rating> userRatings = new HashMap<>();
+	public List< Rating> userRatings = new ArrayList<>();//arraylist that just store rating of a book
 
 	
 
@@ -32,7 +34,7 @@ public class Books implements Comparable<Books>
 		this.title = title;
 		this.releaseDate = releaseDate;
 		this.author = author;
-		this.userRatings = userRatings;
+		//this.userRatings = userRatings;
 	}
 
 	/**
@@ -42,7 +44,7 @@ public class Books implements Comparable<Books>
 	 */
 	public void addUserRatings(Long userId, Rating rating)
 	{
-		userRatings.put(userId, rating);
+		//userRatings.put(userId, rating);
 	}
 
 	/**
@@ -54,7 +56,7 @@ public class Books implements Comparable<Books>
 		double totalRating = 0.0; 
 		double averageRating = 0.0;
 
-		for (Rating rating: userRatings.values())
+		for (Rating rating: userRatings)
 		{
 			totalRating += rating.rating;
 		}
@@ -101,14 +103,14 @@ public class Books implements Comparable<Books>
 	@Override
 	public int compareTo(Books b){ // return either o or -1
 		
-		double d1 =  this.getAverageRating();
-		double d2 = b.getAverageRating();
+		double b1 =  this.getAverageRating();
+		double b2 = b.getAverageRating();
 		
-		if (d1 < d2){
+		if (b1 < b2){
 			return - 1;
 		}
 		else{
-			if(d1 > d2){
+			if(b1 > b2){
 				return 1; 
 			}else
 					return 0;

@@ -48,7 +48,7 @@ public class BookLoader {
 	public static  HashMap<Long, Users> users = new HashMap<Long, Users>();
 
 	@SuppressWarnings("resource")
-	public   HashMap<Long, Books> importBooks() throws Exception 	
+	public  static  HashMap<Long, Books> importBooks() throws Exception 	
 	{
 	
 		BufferedReader in = null;
@@ -61,7 +61,8 @@ public class BookLoader {
 			String BooksDetails = inBooks.nextLine().trim();
 			// parse user details string
 			String[] BooksTokens = BooksDetails.split(delims);
-
+//System.out.println(BooksDetails);
+//System.out.println(BooksTokens.length);
 			// output user data to console.
 			if (BooksTokens.length >= 4) {
 				
@@ -86,7 +87,7 @@ public class BookLoader {
 	}
 
 	@SuppressWarnings("resource")
-	public HashMap<Long, Users> importUser() throws Exception 
+	public static HashMap<Long, Users> importUser() throws Exception 
 	{
 		BufferedReader in = null;
 		File usersFile = new File("./books_small/users.dat");
@@ -118,11 +119,11 @@ public class BookLoader {
 		return users;
 	}
 
-	public ArrayList<Rating> getRating() {
+	public static ArrayList<Rating> getRating() {
 		return rating;
 	}
 
-	public ArrayList<Rating> importRating() throws Exception {
+	public static ArrayList<Rating> importRating() throws Exception {
 		BufferedReader in = null;
 		File ratingsFile = new File("././books_small/ratings.dat");
 		Scanner inRatings = new Scanner(ratingsFile);
@@ -143,6 +144,7 @@ public class BookLoader {
 				Books book = books.get(id);
 				Rating r = new Rating(id,Books,Integer.parseInt(ratingTokens[2]));
 				rating.add(r);
+				book.userRatings.add(r);//add userRating to a book
 			}
 			else{
 				throw new Exception("Are you sure doing the right thing?:"+ ratingTokens.length);

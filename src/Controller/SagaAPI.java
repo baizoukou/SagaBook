@@ -38,9 +38,9 @@ import utils.BookLoader;
 @SuppressWarnings("unused")
 public class SagaAPI {
 	private Serializer serializer;
-	public Map<Long, Users> usersIndex = new HashMap<>();
-	public Map<Long, Books> booksIndex = new HashMap<>();
-	public ArrayList<Rating> ratings = new ArrayList <>();
+//	public Map<Long, Users> usersIndex = new HashMap<>();
+//	public Map<Long, Books> booksIndex = new HashMap<>();
+//	public ArrayList<Rating> ratings = new ArrayList <>();
 
 
 
@@ -54,10 +54,9 @@ public class SagaAPI {
 
 	public void prime() throws Exception
 	{
-		utils.BookLoader loader = new utils.BookLoader();
-		usersIndex = loader.importUser();
-	    booksIndex = loader.importBooks();
-		ratings = loader.importRating();
+		BookLoader.importUser();
+		BookLoader.importBooks();
+		BookLoader.importRating();
 		store();
 
 	}
@@ -65,39 +64,38 @@ public class SagaAPI {
 // keep track and oto encrement each time
 	public Users addUser(String firstname, String lastname,int age, char gender,  String occupation) {
 		Users users = new Users(BookLoader.usercounter++, firstname,lastname,age, gender, occupation);
-		usersIndex.put(users.userId, users);
+		BookLoader.users.put(users.userId, users);
 		return users;
 	}
 
 	public Users removeUser(Long id) {
-		usersIndex.remove(id);
+		BookLoader.users.remove(id);
 		return null;
 	}
 
 
 	public Books addBooks(String title, String releaseDate,String author) {
 		Books books = new Books(BookLoader.bookcounter++, title, releaseDate, author);
-		booksIndex.put(books.ID, books);
+		BookLoader.books.put(books.ID, books);
 		return books;
 	}
 	
 	public Users removeBooks(Long id) {
-		booksIndex.remove(id);
+		BookLoader.books.remove(id);
 		return null;
 	}
 // Book recommender
 	
 	public List<Books> getTopTenBook() {// Sort books by ratings class as user recommender
 		int n = 10;
-		System.out.println(booksIndex.size());
-		List<Books> books = new ArrayList<Books>(booksIndex.values());
+		List<Books> books = new ArrayList<Books>(BookLoader.books.values());
 		Collections.sort(books);
     	return books.subList(0, n);
 	}
 
-	public Rating addRating(Long userid, Long movieid, int therating) {
-		Rating rating = new Rating(userid, movieid, therating);
-		ratings.add(rating);
+	public Rating addRating(Long userid, Long Bookid, int therating) {
+		Rating rating = new Rating(userid, Bookid, therating);
+		rating.add(rating);
 		return rating;
 
 	}
@@ -105,10 +103,10 @@ public class SagaAPI {
 
 	public void store() throws Exception {
 		
-		
-		serializer.push(booksIndex);
-		serializer.push(usersIndex);
-		serializer.push(ratings);
+		System.out.println("Storing...");
+		serializer.push(BookLoader.books);
+		serializer.push(BookLoader.users);
+		serializer.push(BookLoader.rating);
 			serializer.write();
 	
 
@@ -116,9 +114,9 @@ public class SagaAPI {
 	@SuppressWarnings("unchecked")
 	public void load() throws Exception{
 	    serializer.read();
-		ratings = (ArrayList<Rating>) serializer.pop();
-		usersIndex = (Map<Long, Users>) serializer.pop();
-		booksIndex = (Map<Long, Books>) serializer.pop();
+		BookLoader.rating = (ArrayList<Rating>) serializer.pop();
+		BookLoader.users = (HashMap<Long, Users>) serializer.pop();
+		BookLoader.books = (HashMap<Long, Books>) serializer.pop();
 
 	}
 	
@@ -126,9 +124,15 @@ public class SagaAPI {
     return 	BookLoader.books.get(id);
     	
     }
+    
+    public Users getUser(Long id ) {
+        return 	BookLoader.users.get(id);
+        	
+        }
+    
     // look up book id in the hashmap then return the average rating
     
-	public double getRating(long id) {
+	public double getAverageRating(long id) {
 		Books b = getBook (id);// calling getBook method
 		double d = b.getAverageRating();// calling getAverageRating store in d
 		return d;
